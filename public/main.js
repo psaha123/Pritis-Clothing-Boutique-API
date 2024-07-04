@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Fetch and display products
     const fetchProducts = async (query = '') => {
-        const response = await fetch(`/products${query ? `?search=${query}` : ''}`);
+        const response = await fetch(`https://priti-s-clothing-boutique-clnufdkq4-priti-sahas-projects.vercel.app/api/products${query ? `?search=${query}` : ''}`);
         const products = await response.json();
         productList.innerHTML = '';
 
@@ -45,7 +45,7 @@ document.addEventListener('DOMContentLoaded', () => {
             image,
         };
 
-        await fetch('/products', {
+        await fetch('https://priti-s-clothing-boutique-clnufdkq4-priti-sahas-projects.vercel.app/api/products', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
