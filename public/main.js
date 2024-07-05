@@ -3,10 +3,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const searchInput = document.getElementById('search-input');
     const addProductForm = document.getElementById('add-product-form');
 
-    // Fetch and display products
+    // Function to fetch products
     const fetchProducts = async (query = '') => {
         try {
             const response = await fetch(`/api/products${query ? `?search=${query}` : ''}`);
+            if (!response.ok) {
+                throw new Error(`HTTP error! Status: ${response.status}`);
+            }
             const products = await response.json();
             productList.innerHTML = '';
 
@@ -28,12 +31,12 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
-    // Search products
+    // Search products on input change
     searchInput.addEventListener('input', () => {
         fetchProducts(searchInput.value);
     });
 
-    // Add new product
+    // Add new product form submission
     addProductForm.addEventListener('submit', async (e) => {
         e.preventDefault();
 
@@ -50,7 +53,7 @@ document.addEventListener('DOMContentLoaded', () => {
         };
 
         try {
-            await fetch('/api/products', {
+            const response = await fetch('/api/products', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -58,13 +61,17 @@ document.addEventListener('DOMContentLoaded', () => {
                 body: JSON.stringify(newProduct),
             });
 
-            fetchProducts();
-            addProductForm.reset();
+            if (!response.ok) {
+                throw new Error('Failed to add product');
+            }
+
+            fetchProducts(); // Refresh product list
+            addProductForm.reset(); // Clear form inputs
         } catch (error) {
             console.error('Error adding product:', error);
         }
     });
 
-    // Initial fetch
+    // Initial fetch of products
     fetchProducts();
 });
