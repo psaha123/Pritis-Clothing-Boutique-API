@@ -16,7 +16,6 @@ app.use(express.urlencoded({ extended: false }));
 // Serve static files
 app.use(express.static(path.join(__dirname, 'public')));
 
-// Serve index.html for the root route
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
@@ -87,9 +86,9 @@ app.delete('/api/products/:id', async (req, res) => {
 
 mongoose.connect(process.env.MONGODB_URI)
     .then(() => {
-        console.log('Connected to MongoDB');
+        console.log('connected to MongoDB');
         app.listen(port, () => {
-            console.log(`Priti's Clothing Boutique API app is running on port ${port}`);
+            console.log(`pritis-clothing-boutique-api app is running on port ${port}`);
         });
     })
     .catch((error) => {
