@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Priti's Boutique</title>
+    <title>Priti's Pop Boutique</title>
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #f5f5f5;
-            color: #333;
+            background-color: #f0f0f0; /* Modern aesthetic background color */
+            color: #333; /* Default font color */
             margin: 0;
             padding: 0;
             display: flex;
@@ -18,7 +18,7 @@
         h1 {
             margin-top: 30px;
             text-align: center;
-            color: #ff69b4; /* Hot pink color for a pop cultural feel */
+            color: #ff69b4; /* Fun font color to complement the background */
         }
         #search-input {
             width: 80%;
@@ -32,24 +32,26 @@
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
+            gap: 20px; /* Spacing between product items */
         }
         .product-item {
-            border: 1px solid #ccc;
-            padding: 10px;
-            margin: 10px;
-            width: 200px;
-            text-align: center;
             background-color: #fff;
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
             transition: transform 0.3s ease-in-out;
+            width: 250px; /* Width of each product item */
+            margin-bottom: 20px;
         }
         .product-item:hover {
-            transform: translateY(-5px); /* Lift products on hover for a playful effect */
+            transform: translateY(-5px); /* Lift products on hover */
         }
         .product-item img {
-            max-width: 100px;
-            max-height: 100px;
-            margin-bottom: 10px;
+            width: 100%; /* Make images fill the entire width of their container */
+            max-height: 300px; /* Limit maximum height of images */
+            object-fit: cover; /* Maintain aspect ratio and cover the container */
+        }
+        .product-info {
+            padding: 10px;
+            text-align: center;
         }
         form {
             display: flex;
@@ -67,7 +69,7 @@
             font-size: 16px;
         }
         form button {
-            background-color: #ff69b4; /* Hot pink button color for a pop cultural touch */
+            background-color: #ff69b4; /* Hot pink button color */
             color: white;
             cursor: pointer;
         }
