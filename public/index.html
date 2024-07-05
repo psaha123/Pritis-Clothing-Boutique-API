@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Priti's Clothing Boutique</title>
+    <title>Priti's Pop Boutique</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background-color: #f5f5f5;
             color: #333;
             margin: 0;
@@ -18,7 +18,7 @@
         h1 {
             margin-top: 30px;
             text-align: center;
-            color: #666;
+            color: #ff69b4; /* Hot pink color for a pop cultural feel */
         }
         #search-input {
             width: 80%;
@@ -41,6 +41,10 @@
             text-align: center;
             background-color: #fff;
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease-in-out;
+        }
+        .product-item:hover {
+            transform: translateY(-5px); /* Lift products on hover for a playful effect */
         }
         .product-item img {
             max-width: 100px;
@@ -51,6 +55,7 @@
             display: flex;
             flex-direction: column;
             align-items: center;
+            margin-top: 20px;
         }
         form input, form button {
             margin: 5px;
@@ -62,17 +67,17 @@
             font-size: 16px;
         }
         form button {
-            background-color: #4CAF50;
+            background-color: #ff69b4; /* Hot pink button color for a pop cultural touch */
             color: white;
             cursor: pointer;
         }
         form button:hover {
-            background-color: #45a049;
+            background-color: #e6007e; /* Darker shade of pink on hover */
         }
     </style>
 </head>
 <body>
-    <h1>Priti's Clothing Boutique</h1>
+    <h1>Priti's Pop Boutique</h1>
     <input type="text" id="search-input" placeholder="Search products">
     <div id="product-list"></div>
 
