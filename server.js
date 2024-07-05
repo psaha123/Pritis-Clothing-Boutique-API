@@ -23,7 +23,11 @@ app.get('/', (req, res) => {
 // API routes
 app.get('/api/products', async (req, res) => {
     try {
-        const products = await Product.find({});
+        let query = {};
+        if (req.query.search) {
+            query = { name: { $regex: req.query.search, $options: 'i' } };
+        }
+        const products = await Product.find(query);
         res.status(200).json(products);
     } catch (error) {
         console.error(error);
