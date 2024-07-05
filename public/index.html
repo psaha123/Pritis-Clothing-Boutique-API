@@ -7,8 +7,8 @@
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #f0f0f0; /* Modern aesthetic background color */
-            color: #333; /* Default font color */
+            background-color: #f0f0f0; 
+            color: #333; 
             margin: 0;
             padding: 0;
             display: flex;
@@ -18,7 +18,7 @@
         h1 {
             margin-top: 30px;
             text-align: center;
-            color: #ff69b4; /* Fun font color to complement the background */
+            color: #ff69b4;
         }
         #search-input {
             width: 80%;
@@ -32,22 +32,25 @@
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 20px; /* Spacing between product items */
+            gap: 20px; 
         }
         .product-item {
             background-color: #fff;
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
             transition: transform 0.3s ease-in-out;
-            width: 250px; /* Width of each product item */
+            width: 250px; 
             margin-bottom: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
         .product-item:hover {
-            transform: translateY(-5px); /* Lift products on hover */
+            transform: translateY(-5px); 
         }
         .product-item img {
-            width: 100%; /* Make images fill the entire width of their container */
-            max-height: 300px; /* Limit maximum height of images */
-            object-fit: cover; /* Maintain aspect ratio and cover the container */
+            width: 100%; 
+            max-height: 300px; 
+            object-fit: cover;
         }
         .product-info {
             padding: 10px;
@@ -69,12 +72,12 @@
             font-size: 16px;
         }
         form button {
-            background-color: #ff69b4; /* Hot pink button color */
+            background-color: #ff69b4; 
             color: white;
             cursor: pointer;
         }
         form button:hover {
-            background-color: #e6007e; /* Darker shade of pink on hover */
+            background-color: #e6007e; 
         }
     </style>
 </head>
