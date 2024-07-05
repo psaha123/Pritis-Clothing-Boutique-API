@@ -90,11 +90,11 @@ app.delete('/api/products/:id', async (req, res) => {
 
 mongoose.connect(process.env.MONGODB_URI)
     .then(() => {
-        console.log('connected to MongoDB');
+        console.log('Connected to MongoDB');
         app.listen(port, () => {
-            console.log(`pritis-clothing-boutique-api app is running on port ${port}`);
+            console.log(`Priti's Pop Boutique API is running on port ${port}`);
         });
     })
     .catch((error) => {
-        console.error(error);
+        console.error('Error connecting to MongoDB:', error);
     });
