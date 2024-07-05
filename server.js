@@ -16,12 +16,13 @@ app.use(express.urlencoded({ extended: false }));
 // Serve static files
 app.use(express.static(path.join(__dirname, 'public')));
 
+// Serve index.html for the root route
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
 // API routes
-app.get('/products/', async (req, res) => {
+app.get('/api/products', async (req, res) => {
     try {
         const products = await Product.find({});
         res.status(200).json(products);
@@ -31,7 +32,7 @@ app.get('/products/', async (req, res) => {
     }
 });
 
-app.get('/products/:id', async (req, res) => {
+app.get('/api/products/:id', async (req, res) => {
     try {
         const { id } = req.params;
         const product = await Product.findById(id);
@@ -45,7 +46,7 @@ app.get('/products/:id', async (req, res) => {
     }
 });
 
-app.post('/product/', async (req, res) => {
+app.post('/api/products', async (req, res) => {
     try {
         const product = new Product(req.body);
         await product.save();
@@ -56,7 +57,7 @@ app.post('/product/', async (req, res) => {
     }
 });
 
-app.put('/products/:id', async (req, res) => {
+app.put('/api/products/:id', async (req, res) => {
     try {
         const { id } = req.params;
         const product = await Product.findByIdAndUpdate(id, req.body, { new: true });
@@ -70,7 +71,7 @@ app.put('/products/:id', async (req, res) => {
     }
 });
 
-app.delete('/products/:id', async (req, res) => {
+app.delete('/api/products/:id', async (req, res) => {
     try {
         const { id } = req.params;
         const product = await Product.findByIdAndDelete(id);
@@ -86,9 +87,9 @@ app.delete('/products/:id', async (req, res) => {
 
 mongoose.connect(process.env.MONGODB_URI)
     .then(() => {
-        console.log('connected to MongoDB');
+        console.log('Connected to MongoDB');
         app.listen(port, () => {
-            console.log(`pritis-clothing-boutique-api app is running on port ${port}`);
+            console.log(`Priti's Clothing Boutique API app is running on port ${port}`);
         });
     })
     .catch((error) => {
