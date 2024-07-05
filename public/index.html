@@ -7,8 +7,8 @@
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #f0f0f0; 
-            color: #333; 
+            background-color: #f0f0f0; /* Modern aesthetic background color */
+            color: #333; /* Default font color */
             margin: 0;
             padding: 0;
             display: flex;
@@ -18,7 +18,7 @@
         h1 {
             margin-top: 30px;
             text-align: center;
-            color: #ff69b4;
+            color: #ff69b4; /* Fun font color to complement the background */
         }
         #search-input {
             width: 80%;
@@ -32,25 +32,25 @@
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 20px; 
+            gap: 20px; /* Spacing between product items */
         }
         .product-item {
             background-color: #fff;
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
             transition: transform 0.3s ease-in-out;
-            width: 250px; 
+            width: 250px; /* Width of each product item */
             margin-bottom: 20px;
             display: flex;
             flex-direction: column;
             align-items: center;
         }
         .product-item:hover {
-            transform: translateY(-5px); 
+            transform: translateY(-5px); /* Lift products on hover */
         }
         .product-item img {
-            width: 100%; 
-            max-height: 300px; 
-            object-fit: cover;
+            width: 100%; /* Make images fill the entire width of their container */
+            max-height: 300px; /* Limit maximum height of images */
+            object-fit: cover; /* Maintain aspect ratio and cover the container */
         }
         .product-info {
             padding: 10px;
@@ -72,17 +72,17 @@
             font-size: 16px;
         }
         form button {
-            background-color: #ff69b4; 
+            background-color: #ff69b4; /* Hot pink button color */
             color: white;
             cursor: pointer;
         }
         form button:hover {
-            background-color: #e6007e; 
+            background-color: #e6007e; /* Darker shade of pink on hover */
         }
     </style>
 </head>
 <body>
-    <h1>Priti's Pop Boutique</h1>
+    <h1>Priti's Boutique</h1>
     <input type="text" id="search-input" placeholder="Search products">
     <div id="product-list"></div>
 
