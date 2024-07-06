@@ -8,7 +8,7 @@
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background-color: #f0f0f0; 
-            color: #333; 
+            color: #333;
             margin: 0;
             padding: 0;
             display: flex;
@@ -32,7 +32,7 @@
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 20px; 
+            gap: 20px;
         }
         .product-item {
             background-color: #fff;
@@ -48,7 +48,7 @@
             transform: translateY(-5px); 
         }
         .product-item img {
-            width: 100%;
+            width: 100%; 
             max-height: 300px; 
             object-fit: cover; 
         }
@@ -79,6 +79,21 @@
         form button:hover {
             background-color: #e6007e; 
         }
+        #view-json-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #ff69b4; 
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        #view-json-button:hover {
+            background-color: #e6007e; 
+        }
     </style>
 </head>
 <body>
@@ -94,6 +109,13 @@
         <button type="submit">Add Product</button>
     </form>
 
+    <button id="view-json-button" onclick="viewJSON()">Product JSON</button>
+
     <script src="main.js"></script>
+    <script>
+        function viewJSON() {
+            window.location.href = '/api/products';
+        }
+    </script>
 </body>
 </html>
